@@ -1,0 +1,22 @@
+<template v-slot:default="{ active }">
+    <v-list>
+        <v-list v-for="item in treeData" :key="item.title" no-action="no-action">
+            <v-list v-if="item.dept !== null">
+                <v-list-group>
+                    <template v-slot:activator>
+                        <v-list-item-content>
+                            <v-list-item-title v-text="item.title"></v-list-item-title>
+                        </v-list-item-content>
+                    </template>
+                    <mynode :treeData="item.dept"/>
+                </v-list-group>
+            </v-list>
+            <v-list v-else>{{item.title}}</v-list>
+        </v-list>
+    </v-list>
+</template>
+
+<script>
+    export default {name: "mynode", props: ["treeData"]};
+</script>
+<style></style>
