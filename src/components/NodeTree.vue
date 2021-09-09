@@ -5,7 +5,10 @@
                 <v-list-group>
                     <template v-slot:activator>
                         <v-list-item-content>
-                            <v-list-item-title v-text="item.title"></v-list-item-title>
+                            <v-list-item-icon>
+                                <v-icon>mdi-home</v-icon>
+                                <v-list-item-title v-text="item.title"></v-list-item-title>
+                            </v-list-item-icon>
                         </v-list-item-content>
                     </template>
                     <mynode :treeData="item.dept"/>
@@ -19,4 +22,8 @@
 <script>
     export default {name: "mynode", props: ["treeData"]};
 </script>
-<style></style>
+<style>
+.v-list-item__title{
+    float: left;
+}
+</style>

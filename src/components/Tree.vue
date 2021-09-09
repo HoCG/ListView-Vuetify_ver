@@ -3,7 +3,10 @@
         <v-list-group v-for="item in data" :key="item.title" no-action="no-action">
             <template v-slot:activator>
                 <v-list-item-content>
-                    <v-list-item-title v-text="item.title"></v-list-item-title>
+                    <v-list-item-icon>
+                        <v-icon>mdi-home</v-icon>
+                        <v-list-item-title v-text="item.title"></v-list-item-title>
+                    </v-list-item-icon>
                 </v-list-item-content>
             </template>
             <node-tree :treeData="item.dept"/>
@@ -14,12 +17,9 @@
 </template>
 
 <script>
-import NodeTree from "./NodeTree";
+    import NodeTree from "./NodeTree";
 
-export default {
-  props: ["data"],
-  components: {
-    NodeTree
-  }
-};
+    export default {props: ["data"], components: {
+            NodeTree
+        }};
 </script>
