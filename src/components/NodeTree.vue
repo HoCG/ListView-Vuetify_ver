@@ -14,6 +14,7 @@
                     <mynode :treeData="item.dept"/>
                 </v-list-group>
             </v-list>
+            <!--최하위값들-->
             <v-list v-else>{{item.title}}</v-list>
         </v-list>
     </v-list>
